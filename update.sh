@@ -13,6 +13,6 @@ su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && composer install --no-ansi --no-
 su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan config:cache"
 su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan route:cache"
 su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan migrate --force"
-su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan horizon:purge"
-su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan storage:link"
-
+sudo supervisorctl restart horizon
+#su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan horizon:purge"
+#su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan storage:link"
