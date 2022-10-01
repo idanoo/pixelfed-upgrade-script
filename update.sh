@@ -15,7 +15,7 @@ su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan route:cache"
 su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan migrate --force"
 
 # Make sure we restart workers on new code too
-sudo supervisorctl restart horizon
+sudo systemctl restart horizon.service
 
 #su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan horizon:purge"
 #su - $WEB_USER -s /bin/bash -c "cd $WEB_ROOT && php artisan storage:link"
